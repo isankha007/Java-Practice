@@ -1,0 +1,19 @@
+//find the number between  55 and 65
+
+List<Integer> filteredList = intList.stream().filter(e->(e>=55 && e<=65)).collect(Collectors.toList());
+
+
+1,5,6,8,11,30
+sum of even number
+
+intList.stream().filter(e->e%2==0).reduce(0,(e1,e2)->(e1+e2));
+
+employee table emp_id,emp_name,department_id,city_id ;
+department 
+
+///emp with city starting with letter 'A'
+
+select * from employee e JOIN city c on e.city_id= c.id and c.name like 'A%';
+//dep name having count of employee greater than 50
+select dept_name from department d Join employee e on e.dept_id = d.id group by dept_name  having count(*)>50;
+ 

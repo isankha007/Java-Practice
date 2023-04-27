@@ -1,0 +1,41 @@
+(e1,e1)->(e1-e2)
+Collection.sort(empList,(e1,e1)->(e1.id>e2.id));
+
+public class Signletone{
+   public static Singletone instances;
+   
+   private Signletone(){
+   
+   }
+   
+   public Synchronized static Signletone getinstance(){
+   
+      if(instances==null){
+	   Synchronized(this.class){
+		if(instances==null){
+		   instances=new Signletone();
+		}
+	   }
+	   
+	  }
+	  return instances;
+   
+   }
+
+}
+
+Map<Integer,String> hm=new HashMap<>();
+
+hm.put(1,"abc");
+hm.put(2,"xyz");
+hm.put(1,"sankha");
+
+for(Map.Entry<Integer,String> el:hm.entryset()){
+
+	System.out.println(el.getKey()+" "+el.getValue());
+}
+
+1 sankha
+2 xyz
+
+

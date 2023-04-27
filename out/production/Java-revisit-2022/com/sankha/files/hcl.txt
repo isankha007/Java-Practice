@@ -1,0 +1,43 @@
+Set<Charecter> set=new HashSet<>();
+
+set.add('a');
+set.add('e');
+set.add('i');
+set.add('o');
+set.add('u');
+
+
+String str="ae#zyu*"
+
+///count vowel and consotant
+
+int countVowel=0;
+int countConst=0;
+for(Charecter ch:str.toCharArray()){
+     if(set.contains(ch)){
+	   countVowel++;
+	 }
+	 else if(ch>65 && ch<97){
+	       consotant++;
+	 }
+}
+
+System.out.println("vowels "+ countVowel+" consotant"+consotant);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
