@@ -19,6 +19,8 @@ public class FunctionalPCSRunner {
 
         Consumer<String> cm=s-> System.out.println(s);
         cm.accept("Consumer ");
+
+
         Supplier<Date> sp=()->new Date();
         System.out.println(sp.get());
 
