@@ -121,6 +121,20 @@ public class StreamDemo {
         //long count=stream.count();
         //System.out.println(count);
        // stream.forEach(System.out::println);
+
+        //sort map wih key as id ,value as emp
+        Map<Integer, Employee> empMap = employeeList.stream().collect(Collectors.toMap(employee1 -> employee1.getId(), employee1 -> employee1));
+        //System.out.println("...."+empMap+" ....");
+        empMap.forEach((k,v)-> System.out.println(k+"---"+v));
+
+        LinkedHashMap<Integer, Employee> sortedEmpMap = empMap.entrySet().stream().sorted((e1, e2) -> Integer.valueOf((int) (e1.getValue().getSalary() - e2.getValue().getSalary())))
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (e1, e2) -> e1, LinkedHashMap::new)
+                );
+        System.out.println("++++++++++++++++=============================+++++++++++++++++++++++++");
+        sortedEmpMap.forEach((k,v)-> System.out.println(k+"---"+v));
     }
 }
 
